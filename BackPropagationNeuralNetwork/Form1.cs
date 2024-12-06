@@ -13,6 +13,7 @@ namespace BackPropagationNeuralNetwork
         int sizeInput = 4;
         int maxInputs = 8;
         int minInputs = 2;
+        int epoch = 0;
         public Form1()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace BackPropagationNeuralNetwork
 
         private void buttonTrain(object sender, EventArgs e)
         {
-            int epoch = 4000;
+            epoch = Convert.ToInt32(epochTextBox.Text);
             String result = "";
             for (int x = 1; x <= epoch; x++)
             {
@@ -81,9 +82,9 @@ namespace BackPropagationNeuralNetwork
                 NN.setInputs(i, Convert.ToDouble(inputsContainer.Controls[i].Text));
             }
             NN.run();
-            double result = Math.Round(NN.getOuputData(0));
+            double result = NN.getOuputData(0);
 
-            this.result.Text = result.ToString();
+            this.result.Text = result.ToString("0.00");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,7 +97,8 @@ namespace BackPropagationNeuralNetwork
         {
             //https://stackoverflow.com/questions/52485608/how-to-choose-the-number-of-hidden-layers-and-nodes#:~:text=The%20number%20of%20hidden%20neurons,size%20of%20the%20input%20layer.
             //The number of hidden neurons should be 2 / 3 the size of the input layer, plus the size of the output layer.
-            int hiddenLayerSize =(int)((2.0 / 3) * sizeInput + sizeOutput);
+            //int hiddenLayerSize =(int)((2.0 / 3) * sizeInput + sizeOutput);
+            int hiddenLayerSize = Convert.ToInt32(hiddenLayerTextBox.Text);
             NN = new NeuralNet(sizeInput, hiddenLayerSize, sizeOutput);
         }
 

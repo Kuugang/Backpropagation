@@ -45,6 +45,10 @@
             inputsContainer = new FlowLayoutPanel();
             buttonIncremetInput = new Button();
             buttonDecrementInput = new Button();
+            epochTextBox = new TextBox();
+            label3 = new Label();
+            hiddenLayerTextBox = new TextBox();
+            label4 = new Label();
             flowLayoutPanel1.SuspendLayout();
             inputsContainer.SuspendLayout();
             SuspendLayout();
@@ -205,11 +209,49 @@
             buttonDecrementInput.UseVisualStyleBackColor = true;
             buttonDecrementInput.Click += buttonDecrementInput_Click;
             // 
+            // epochTextBox
+            // 
+            epochTextBox.Location = new Point(588, 289);
+            epochTextBox.Name = "epochTextBox";
+            epochTextBox.Size = new Size(100, 23);
+            epochTextBox.TabIndex = 18;
+            epochTextBox.Text = "4000";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(588, 271);
+            label3.Name = "label3";
+            label3.Size = new Size(40, 15);
+            label3.TabIndex = 19;
+            label3.Text = "Epoch";
+            // 
+            // hiddenLayerTextBox
+            // 
+            hiddenLayerTextBox.Location = new Point(588, 333);
+            hiddenLayerTextBox.Name = "hiddenLayerTextBox";
+            hiddenLayerTextBox.Size = new Size(100, 23);
+            hiddenLayerTextBox.TabIndex = 20;
+            hiddenLayerTextBox.Text = "100";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(588, 315);
+            label4.Name = "label4";
+            label4.Size = new Size(155, 15);
+            label4.TabIndex = 21;
+            label4.Text = "# of neurons in hidden layer";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
+            Controls.Add(hiddenLayerTextBox);
+            Controls.Add(label3);
+            Controls.Add(epochTextBox);
             Controls.Add(buttonDecrementInput);
             Controls.Add(buttonIncremetInput);
             Controls.Add(inputsContainer);
@@ -250,5 +292,9 @@
         private FlowLayoutPanel inputsContainer;
         private Button buttonIncremetInput;
         private Button buttonDecrementInput;
+        private TextBox epochTextBox;
+        private Label label3;
+        private TextBox hiddenLayerTextBox;
+        private Label label4;
     }
 }
